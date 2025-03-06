@@ -1,0 +1,125 @@
+
+// .poppins-thin {
+    //     font-family: "Poppins", sans-serif;
+    //     font-weight: 100;
+    //     font-style: normal;
+    //   }
+    
+    
+@use 'vars';
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 64px auto;
+    color: vars.$primaryColor;
+}
+
+img{
+    max-width: 100%;
+}
+
+.main__nav{
+    grid-row: 1 / -1;
+    grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
+
+    &__link{
+        padding-left: vars.$defaultPadding;
+        padding-top: vars.$defaultPadding;
+        display: inline-block;
+        color: vars.$secondColor;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+    }
+
+    &__menus{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+    }
+}
+
+
+.main__nav__menus__item,
+.top__nav__menu{
+    list-style: none;
+    padding-left: vars.$defaultPadding;
+    padding-top: vars.$defaultPadding;
+}
+
+.main__nav__menus__item a,
+.top__nav__menu a{
+
+    text-decoration: none;
+    color: vars.$primaryColor;
+    svg{
+        margin-right: 10px;
+    }
+}
+
+
+.top__nav{
+    grid-column: 2 / -1;
+    grid-row: 1 / 2;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__menu{
+        display: flex;
+        align-items: center;
+        gap: vars.$defaultPadding;
+    }
+}
+
+.main__nav svg,
+.top__nav svg{
+    vertical-align: middle;
+}
+
+.perfil{
+    margin-right: vars.$defaultPadding;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    &__thumb{
+        width: 60px;
+        padding-top: .9rem;
+        // padding-bottom: .9rem;
+
+        img{
+            width: 100%;
+        }
+    }
+
+    &__name{
+        font-size: .8rem;
+        font-weight: 600;
+        color: vars.$secondColor;
+    }
+    &__rule{
+        font-size: .7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+}
+
+
+main{
+    grid-row: 2 / -1;
+    grid-column: 2 / -1;
+}
+
